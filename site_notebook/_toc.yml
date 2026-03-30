@@ -1,9 +1,0 @@
-format: jb-book
-root: index
-chapters:
-  - file: 01_chargement_decouverte
-  - file: 02_nettoyage_cleaning
-  - file: 03_transformation_agregation
-  - file: 04_analyses_statistiques
-  - file: 05_donnees_spatiales
-  - file: 06_synthese_finale
