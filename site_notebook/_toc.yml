@@ -1,5 +1,5 @@
 format: jb-book
-root: intro
+root: index
 chapters:
   - file: 01_chargement_decouverte
   - file: 02_nettoyage_cleaning
