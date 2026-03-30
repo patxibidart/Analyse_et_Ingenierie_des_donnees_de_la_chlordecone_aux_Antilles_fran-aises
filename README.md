@@ -1,49 +1,41 @@
-# Analyse et Ingénierie des données de la chlordécone aux Antilles françaises
+# Analyse et Ingénierie des données de la chlordécone aux Antilles
 
-La chlordécone est un pesticide organochloré utilisé aux Antilles françaises jusqu’au début des années 1990. Sa persistance dans les sols, les eaux et les chaînes alimentaires en fait aujourd’hui un enjeu sanitaire, environnemental et socio-économique majeur.
+Ce projet propose une suite d'analyses statistiques et spatiales sur la pollution à la chlordécone. Pour faciliter la lecture des résultats sans installer d'environnement Python complexe, un **visualiseur de notebooks interactif** est inclus.
 
-Ce dépôt regroupe les travaux de recherche, d'analyse et de visualisation des données concernant l'impact environnemental et sanitaire de la chlordécone aux Antilles françaises (Martinique et Guadeloupe).
+## 🚀 Comment utiliser le site de récapitulation ?
 
-L'objectif de ce projet est de traiter les données brutes, de les nettoyer, et d'en extraire des analyses statistiques et spatiales afin de mieux comprendre la répartition et les conséquences de cette pollution.
+Le site fonctionne comme un lecteur de fichiers local. Aucune donnée n'est envoyée sur internet.
 
-## 📊 Consulter le rapport interactif
-
-L'ensemble des analyses (Jupyter Notebooks) est compilé et accessible sous forme de site web interactif et professionnel.
-
-👉 **[Voir le site des analyses](https://patxibidart.github.io/Analyse_et_Ingenierie_des_donnees_de_la_chlordecone_aux_Antilles_fran-aises/)** *(Note: vérifiez que ce lien correspond bien à votre URL finale)*
-
----
-
-## 📂 Structure du projet
-
-- `data/` : Contient les jeux de données bruts et nettoyés utilisés pour l'analyse.
-- `fig/` : Contient les figures, graphiques et cartes générés par le code.
-- `site_notebook/` : **Dossier principal du site web**. Il contient les notebooks finaux et les fichiers de configuration de Jupyter Book.
-- `.github/workflows/` : Contient l'automate de déploiement (`deploy.yml`) qui met à jour le site à chaque modification.
+1.  Ouvrez le dossier `site_notebook/`.
+2.  Lancez le fichier **`index.html`** dans votre navigateur (Chrome, Firefox ou Safari).
+3.  **Déposez vos fichiers :** * Sélectionnez vos 6 notebooks (`.ipynb`) dans votre explorateur de fichiers.
+    * Faites-les glisser (Drag & Drop) directement sur la zone pointillée du site.
+4.  **Naviguez :** Des onglets apparaîtront en haut pour passer d'une étape de l'analyse à l'autre de manière fluide.
 
 ---
 
-## 🛠️ Consignes de maintenance du site (À lire avant toute modification)
+## 🎨 Consignes de Style et Présentation
 
-Le site web est généré automatiquement grâce à **Jupyter Book** et **GitHub Actions**. Pour garantir que le site se mette à jour correctement sans erreur "404" ou "Build failed", veuillez respecter scrupuleusement les règles suivantes :
+L'interface a été conçue pour être **sobre, naturelle et professionnelle**, en accord avec une démarche scientifique :
 
-### 1. Ajout ou modification d'un Notebook
-- Tous les notebooks destinés à apparaître sur le site **doivent** être placés dans le dossier `site_notebook/`.
-- Si vous modifiez un notebook existant, il vous suffit de faire un `git push` (ou d'importer le fichier modifié sur GitHub). Le site se mettra à jour tout seul en 2 à 3 minutes.
+- **Couleurs :** Fond clair (`#F4F6F8`), textes sombres et accents bleu-gris pour ne pas fatiguer l'œil.
+- **Graphiques :** Le site respecte le rendu de vos bibliothèques (Matplotlib, Seaborn, Plotly). Pour une harmonie parfaite, veillez à utiliser des thèmes `whitegrid` ou `minimal` dans vos notebooks.
+- **Typographie :** Utilisation de polices système sans empattement (Sans-serif) pour une clarté maximale des données chiffrées.
 
-### 2. Règles de nommage (Très important)
-- Les noms de vos fichiers `.ipynb` ne doivent contenir **aucun espace** et **aucun accent**. 
-- Utilisez des tirets du bas (`_`). *Exemple : `01_chargement_donnees.ipynb`*.
+---
 
-### 3. Mise à jour du menu (`_toc.yml`)
-Si vous ajoutez un **nouveau** notebook ou si vous en renommez un, le site plantera si vous ne mettez pas à jour le fichier `_toc.yml` (situé dans `site_notebook/`).
-- Ouvrez `_toc.yml`.
-- Ajoutez ou modifiez le nom du fichier **sans l'extension .ipynb**.
-  ```yaml
-  format: jb-book
-  root: index  # (ou intro, selon votre configuration de page d'accueil)
-  chapters:
-    - file: 01_chargement_decouverte
-    - file: 02_nettoyage_cleaning
-    # Ajoutez le nouveau fichier ici :
-    - file: 07_nouvelle_analyse
+## 🛠️ Maintenance et Mise à jour du site
+
+Si vous souhaitez modifier l'apparence du site (`index.html`), respectez les consignes suivantes pour ne pas casser l'outil de lecture :
+
+### 1. Structure du Code
+- **Ne pas toucher au JavaScript** à la fin du fichier : il contient la logique "magique" qui transforme le format JSON des notebooks en HTML lisible.
+- **Modification du CSS :** Vous pouvez ajuster les couleurs dans la section `:root` du CSS au début du fichier pour les accorder précisément à vos graphiques.
+
+### 2. Export des Notebooks
+- Pour que le site lise correctement vos fichiers, assurez-vous d'enregistrer vos notebooks (`Ctrl+S`) après avoir **exécuté toutes les cellules**. Le site affiche les résultats qui sont *déjà* stockés dans le fichier.
+- **Poids des fichiers :** Évitez les graphiques 3D trop lourds ou les cartes comportant des millions de points, ce qui pourrait ralentir la navigation dans le navigateur.
+
+### 3. Noms des onglets
+Le visualiseur utilise le nom de vos fichiers pour créer les onglets. 
+- **Conseil :** Nommez vos fichiers de façon claire (ex: `01_Analyse_Sols.ipynb`) pour que la navigation soit intuitive.
