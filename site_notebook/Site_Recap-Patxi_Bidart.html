@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyse Chlordécone · Antilles</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Couleurs de fond - Thème clair et professionnel */
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface2: #f9fafb;
+    --border: #e5e7eb;
+    
+    /* Couleurs d'accentuation (À ajuster selon vos graphes) */
+    --accent: #1e40af; /* Bleu professionnel par défaut */
+    --accent-light: #eff6ff;
+    --accent2: #059669; /* Vert émeraude secondaire */
+    
+    /* Typographie */
+    --text: #111827;
+    --text-muted: #4b5563;
+    --text-dim: #6b7280;
+    
+    /* Code et cellules */
+    --code-bg: #f8fafc;
+    --output-bg: #ffffff;
+    --warn: #d97706;
+    --error: #dc2626;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--surface);
+    padding: 60px 48px 40px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: clamp(24px, 3vw, 42px);
+    font-weight: 700;
+    color: var(--text);
+    max-width: 800px;
+    margin: 0 auto;
+    letter-spacing: -0.02em;
+  }
+
+  h1 span {
+    color: var(--accent);
+  }
+
+  .subtitle {
+    margin: 16px auto 0;
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 600px;
+  }
+
+  /* ── DROP ZONE ── */
+  #dropzone {
+    margin: 48px auto 0;
+    max-width: 800px;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 60px 48px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--surface);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  #dropzone:hover, #dropzone.drag-over {
+    border-color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  .drop-icon {
+    font-size: 32px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .drop-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .drop-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  #file-input { display: none; }
+
+  .drop-badge {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 4px 12px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* ── NAV TABS ── */
+  #nav-container {
+    display: none;
+    margin: 0 auto;
+    max-width: 1100px;
+    padding: 24px 48px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 24px;
+    overflow-x: auto;
+  }
+
+  .nav-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .nav-tab:hover { color: var(--text); }
+
+  .nav-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .tab-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    background: var(--border);
+    border-radius: 50%;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+
+  .nav-tab.active .tab-num {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* ── NOTEBOOK CONTENT ── */
+  #notebook-container {
+    display: none;
+    padding: 40px 48px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .notebook-header {
+    margin-bottom: 32px;
+  }
+
+  .notebook-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .notebook-meta {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  /* ── CELLS ── */
+  .cell {
+    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  }
+
+  .cell-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .cell-type {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .cell-type.code { color: var(--accent); }
+  .cell-type.markdown { color: var(--text-dim); }
+
+  .cell-num {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+
+  /* Code input */
+  .cell-code {
+    background: var(--code-bg);
+    padding: 16px 20px;
+    overflow-x: auto;
+  }
+
+  .cell-code pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #334155;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Syntax highlighting (Thème clair) */
+  .kw { color: #d946ef; font-weight: 600; }
+  .fn { color: #2563eb; }
+  .st { color: #059669; }
+  .cm { color: #94a3b8; font-style: italic; }
+  .nm { color: #ea580c; }
+  .op { color: #475569; }
+
+  /* Markdown */
+  .cell-markdown {
+    padding: 24px 32px;
+    background: var(--surface);
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .cell-markdown h1, .cell-markdown h2, .cell-markdown h3 {
+    color: var(--text);
+    margin: 24px 0 12px;
+    font-weight: 600;
+  }
+  .cell-markdown h1 { font-size: 24px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+  .cell-markdown h2 { font-size: 20px; }
+  .cell-markdown h3 { font-size: 16px; }
+  .cell-markdown p { margin-bottom: 16px; }
+  .cell-markdown code {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 13px;
+    background: var(--surface2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    color: var(--accent);
+  }
+  .cell-markdown ul, .cell-markdown ol { padding-left: 24px; margin-bottom: 16px; }
+  .cell-markdown li { margin-bottom: 6px; }
+  .cell-markdown a { color: var(--accent); text-decoration: none; }
+  .cell-markdown a:hover { text-decoration: underline; }
+  .cell-markdown blockquote {
+    border-left: 4px solid var(--border);
+    padding-left: 16px;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 16px 0;
+  }
+
+  /* Outputs */
+  .cell-outputs {
+    border-top: 1px solid var(--border);
+    background: var(--output-bg);
+  }
+
+  .output-block {
+    padding: 16px 20px;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .output-block:last-child { border-bottom: none; }
+
+  .output-label {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .output-text {
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .output-error { color: var(--error); }
+
+  .output-img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .output-html {
+    font-size: 13px;
+    overflow-x: auto;
+  }
+
+  /* Tables Pandas */
+  .output-html table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .output-html th {
+    background: var(--surface2);
+    color: var(--text-muted);
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+    font-weight: 600;
+  }
+
+  .output-html td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .output-html tr:hover td { background: var(--surface2); }
+
+  /* ── STATUS BAR ── */
+  #status-bar { display: none; }
+
+  /* ── TOGGLE BUTTON ── */
+  .cell-toggle { cursor: pointer; user-select: none; }
+  .cell-toggle .toggle-icon { font-size: 12px; color: var(--text-dim); transition: transform 0.2s; }
+  .cell.collapsed .cell-code, .cell.collapsed .cell-outputs { display: none; }
+  .cell.collapsed .toggle-icon { transform: rotate(-90deg); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-glow"></div>
+  <div class="eyebrow">📊 Analyse de données · Antilles françaises</div>
+  <h1>Chlordécone<br><span>&amp; Ingénierie des données</span></h1>
+  <p class="subtitle">Chargez vos notebooks Jupyter pour explorer interactivement le code, les résultats et les visualisations de l'analyse.</p>
+</header>
+
+<div id="dropzone" onclick="document.getElementById('file-input').click()">
+  <input type="file" id="file-input" multiple accept=".ipynb">
+  <div class="drop-icon">⬆</div>
+  <div class="drop-title">Déposez vos fichiers .ipynb ici</div>
+  <div class="drop-sub">ou cliquez pour sélectionner vos 6 notebooks</div>
+  <div class="drop-badge">.ipynb · Jupyter Notebook</div>
+</div>
+
+<div id="nav-container"></div>
+<div id="notebook-container"></div>
+
+<div id="empty-state" style="display:none">
+  <div class="big">Notebook vide</div>
+  <div>Aucune cellule trouvée dans ce fichier.</div>
+</div>
+
+<div id="status-bar">
+  <div class="status-dot" id="status-dot"></div>
+  <span id="status-text">En attente de fichiers…</span>
+</div>
+
+<script>
+  const notebooks = {};
+  let activeTab = null;
+
+  // ── Drag & drop ──
+  const dz = document.getElementById('dropzone');
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault();
+    dz.classList.remove('drag-over');
+    handleFiles([...e.dataTransfer.files]);
+  });
+
+  document.getElementById('file-input').addEventListener('change', e => {
+    handleFiles([...e.target.files]);
+  });
+
+  function handleFiles(files) {
+    const ipynbs = files.filter(f => f.name.endsWith('.ipynb'));
+    if (!ipynbs.length) return;
+
+    ipynbs.sort((a, b) => a.name.localeCompare(b.name));
+    let loaded = 0;
+
+    ipynbs.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const nb = JSON.parse(e.target.result);
+          notebooks[file.name] = nb;
+          loaded++;
+          if (loaded === ipynbs.length) renderNav();
+        } catch(err) {
+          setStatus(`Erreur lecture : ${file.name}`, false);
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    setStatus(`Chargement de ${ipynbs.length} notebook(s)…`, true);
+  }
+
+  function renderNav() {
+    const nav = document.getElementById('nav-container');
+    nav.innerHTML = '';
+    nav.style.display = 'flex';
+
+    const names = Object.keys(notebooks).sort();
+
+    names.forEach((name, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'nav-tab';
+      const label = name.replace('.ipynb', '').replace(/_/g, ' ');
+      btn.innerHTML = `<span class="tab-num">${i + 1}</span> ${label}`;
+      btn.onclick = () => {
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        renderNotebook(name);
+      };
+      nav.appendChild(btn);
+    });
+
+    // Auto-select first
+    nav.querySelector('.nav-tab').click();
+    document.getElementById('dropzone').style.display = 'none';
+    setStatus(`${names.length} notebook(s) chargé(s)`, true);
+  }
+
+  function renderNotebook(name) {
+    activeTab = name;
+    const nb = notebooks[name];
+    const container = document.getElementById('notebook-container');
+    container.style.display = 'block';
+    container.innerHTML = '';
+
+    const cells = nb.cells || [];
+    if (!cells.length) {
+      document.getElementById('empty-state').style.display = 'block';
+      return;
+    }
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'notebook-header';
+    const title = name.replace('.ipynb', '').replace(/_/g, ' ');
+    const kernel = nb.metadata?.kernelspec?.display_name || 'Python';
+    hdr.innerHTML = `
+      <div class="notebook-title">${title}</div>
+      <div class="notebook-meta">kernel: ${kernel} · ${cells.length} cellules</div>
+    `;
+    container.appendChild(hdr);
+
+    // Cells
+    cells.forEach((cell, idx) => {
+      const el = buildCell(cell, idx);
+      if (el) {
+        el.style.animationDelay = `${idx * 30}ms`;
+        container.appendChild(el);
+      }
+    });
+
+    setStatus(`${name} · ${cells.length} cellules`, true);
+  }
+
+  function buildCell(cell, idx) {
+    const div = document.createElement('div');
+    div.className = `cell cell-${cell.cell_type}`;
+
+    const src = Array.isArray(cell.source) ? cell.source.join('') : (cell.source || '');
+    if (!src.trim() && (!cell.outputs || !cell.outputs.length)) return null;
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'cell-header cell-toggle';
+    hdr.innerHTML = `
+      <span class="cell-type ${cell.cell_type}">${cell.cell_type}</span>
+      <span class="toggle-icon">▾</span>
+      <span class="cell-num">[${cell.execution_count ?? idx}]</span>
+    `;
+    hdr.onclick = () => div.classList.toggle('collapsed');
+    div.appendChild(hdr);
+
+    if (cell.cell_type === 'code') {
+      const codeDiv = document.createElement('div');
+      codeDiv.className = 'cell-code';
+      const pre = document.createElement('pre');
+      pre.innerHTML = highlight(escapeHtml(src));
+      codeDiv.appendChild(pre);
+      div.appendChild(codeDiv);
+
+      if (cell.outputs && cell.outputs.length) {
+        const outDiv = document.createElement('div');
+        outDiv.className = 'cell-outputs';
+        cell.outputs.forEach(out => {
+          const block = buildOutput(out);
+          if (block) outDiv.appendChild(block);
+        });
+        div.appendChild(outDiv);
+      }
+
+    } else if (cell.cell_type === 'markdown') {
+      const mdDiv = document.createElement('div');
+      mdDiv.className = 'cell-markdown';
+      mdDiv.innerHTML = parseMarkdown(src);
+      div.appendChild(mdDiv);
+    }
+
+    return div;
+  }
+
+  function buildOutput(out) {
+    const block = document.createElement('div');
+    block.className = 'output-block';
+
+    if (out.output_type === 'stream') {
+      block.innerHTML = `<div class="output-label">${out.name || 'stdout'}</div>
+        <div class="output-text">${escapeHtml(joinLines(out.text))}</div>`;
+
+    } else if (out.output_type === 'error') {
+      const tb = joinLines(out.traceback).replace(/\x1b\[[0-9;]*m/g, '');
+      block.innerHTML = `<div class="output-label">error</div>
+        <div class="output-text output-error">${escapeHtml(tb)}</div>`;
+
+    } else if (out.output_type === 'display_data' || out.output_type === 'execute_result') {
+      const data = out.data || {};
+
+      if (data['image/png']) {
+        block.innerHTML = `<div class="output-label">image</div>
+          <img class="output-img" src="data:image/png;base64,${data['image/png'].replace(/\n/g,'')}">`;
+
+      } else if (data['image/jpeg']) {
+        block.innerHTML = `<div class="output-label">image</div>
+          <img class="output-img" src="data:image/jpeg;base64,${data['image/jpeg'].replace(/\n/g,'')}">`;
+
+      } else if (data['text/html']) {
+        block.innerHTML = `<div class="output-label">html</div>
+          <div class="output-html">${joinLines(data['text/html'])}</div>`;
+
+      } else if (data['text/plain']) {
+        block.innerHTML = `<div class="output-label">output</div>
+          <div class="output-text">${escapeHtml(joinLines(data['text/plain']))}</div>`;
+      }
+    }
+
+    return block.innerHTML ? block : null;
+  }
+
+  // ── Helpers ──
+  function joinLines(val) {
+    return Array.isArray(val) ? val.join('') : (val || '');
+  }
+
+  function escapeHtml(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function highlight(code) {
+    return code
+      .replace(/(#[^\n]*)/g, '<span class="cm">$1</span>')
+      .replace(/\b(import|from|as|def|class|return|if|elif|else|for|while|in|not|and|or|True|False|None|with|try|except|finally|raise|pass|break|continue|lambda|yield|global|nonlocal|del|assert)\b/g, '<span class="kw">$1</span>')
+      .replace(/("(?:[^"\\]|\\.)*"|'(?:[^'\\]|\\.)*')/g, '<span class="st">$1</span>')
+      .replace(/\b(\d+(?:\.\d+)?)\b/g, '<span class="nm">$1</span>');
+  }
+
+  function parseMarkdown(md) {
+    return md
+      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+      .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`(.+?)`/g, '<code>$1</code>')
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank">$1</a>')
+      .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+      .replace(/^[-*] (.+)$/gm, '<li>$1</li>')
+      .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+      .replace(/\n\n/g, '</p><p>')
+      .replace(/^(?!<[hbup])(.+)$/gm, (m) => m.startsWith('<') ? m : `<p>${m}</p>`);
+  }
+
+  function setStatus(msg, active) {
+    document.getElementById('status-text').textContent = msg;
+    document.getElementById('status-dot').className = 'status-dot' + (active ? ' active' : '');
+  }
+</script>
+</body>
+</html>
