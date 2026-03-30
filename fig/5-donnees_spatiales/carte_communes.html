@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fed412cf63155be103642c4ec5ff312a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_fed412cf63155be103642c4ec5ff312a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fed412cf63155be103642c4ec5ff312a = L.map(
+                "map_fed412cf63155be103642c4ec5ff312a",
+                {
+                    center: [14.65, -61.02],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_99152cebcf34726a7f94b30dac2cd0f1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_99152cebcf34726a7f94b30dac2cd0f1.addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+            var circle_marker_3c64656880f25b1b97ac5f1cea3838f4 = L.circleMarker(
+                [14.811819484899276, -61.127274141828025],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.185, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_028ea9ad5747818758d16c741d1a2f1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_320c7c324b32e8032553f74c4074ecca = $(`<div id="html_320c7c324b32e8032553f74c4074ecca" style="width: 100.0%; height: 100.0%;">AJOUPA BOUILLON – 0.303 mg/kg (1037 prélèvements)</div>`)[0];
+                popup_028ea9ad5747818758d16c741d1a2f1d.setContent(html_320c7c324b32e8032553f74c4074ecca);
+            
+        
+
+        circle_marker_3c64656880f25b1b97ac5f1cea3838f4.bindPopup(popup_028ea9ad5747818758d16c741d1a2f1d)
+        ;
+
+        
+    
+    
+            var circle_marker_05b1307023cddfaeceea2f358cd43ee0 = L.circleMarker(
+                [14.499069560619828, -61.07059654896318],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_fe475e8f940e7b52ccb6f10acac602d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac5292e0370601ffe12505f2d2c2fb6b = $(`<div id="html_ac5292e0370601ffe12505f2d2c2fb6b" style="width: 100.0%; height: 100.0%;">ANSES-D'ARLET(LES) – 0.008 mg/kg (241 prélèvements)</div>`)[0];
+                popup_fe475e8f940e7b52ccb6f10acac602d9.setContent(html_ac5292e0370601ffe12505f2d2c2fb6b);
+            
+        
+
+        circle_marker_05b1307023cddfaeceea2f358cd43ee0.bindPopup(popup_fe475e8f940e7b52ccb6f10acac602d9)
+        ;
+
+        
+    
+    
+            var circle_marker_da2fbe4862e4e9011ec42f6eae8d8d00 = L.circleMarker(
+                [14.845137526205852, -61.12096646026576],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_f9d4a96c0c3d5356fa04227b2c7435b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_27e021635e631d489dcd4d297eddaf63 = $(`<div id="html_27e021635e631d489dcd4d297eddaf63" style="width: 100.0%; height: 100.0%;">BASSE-POINTE – 1.381 mg/kg (992 prélèvements)</div>`)[0];
+                popup_f9d4a96c0c3d5356fa04227b2c7435b1.setContent(html_27e021635e631d489dcd4d297eddaf63);
+            
+        
+
+        circle_marker_da2fbe4862e4e9011ec42f6eae8d8d00.bindPopup(popup_f9d4a96c0c3d5356fa04227b2c7435b1)
+        ;
+
+        
+    
+    
+            var circle_marker_503864e4ceeab52452528d312ec9c6c6 = L.circleMarker(
+                [14.678166709336782, -61.15019118653495],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_1955394847776301d4a04543f867e51c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_426aaddc430f6acd17b88a86f1087f22 = $(`<div id="html_426aaddc430f6acd17b88a86f1087f22" style="width: 100.0%; height: 100.0%;">BELLEFONTAINE – 0.002 mg/kg (154 prélèvements)</div>`)[0];
+                popup_1955394847776301d4a04543f867e51c.setContent(html_426aaddc430f6acd17b88a86f1087f22);
+            
+        
+
+        circle_marker_503864e4ceeab52452528d312ec9c6c6.bindPopup(popup_1955394847776301d4a04543f867e51c)
+        ;
+
+        
+    
+    
+            var circle_marker_e5f4b7707c26d28097873e13ad9c6fdb = L.circleMarker(
+                [14.714669045516176, -61.16732273984366],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_a756a4c9da86e441527ea7420ebf77db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_83ebe7246e8d8913096fb3cbcb946efc = $(`<div id="html_83ebe7246e8d8913096fb3cbcb946efc" style="width: 100.0%; height: 100.0%;">CARBET(LE) – 0.025 mg/kg (463 prélèvements)</div>`)[0];
+                popup_a756a4c9da86e441527ea7420ebf77db.setContent(html_83ebe7246e8d8913096fb3cbcb946efc);
+            
+        
+
+        circle_marker_e5f4b7707c26d28097873e13ad9c6fdb.bindPopup(popup_a756a4c9da86e441527ea7420ebf77db)
+        ;
+
+        
+    
+    
+            var circle_marker_0ac1d1ca3797f421c2af92964532edbc = L.circleMarker(
+                [14.64917342305049, -61.128432628218135],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_983ca78cf2045813209d80189a281c0d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a74f62919e5cecf4e29adf1664520c2b = $(`<div id="html_a74f62919e5cecf4e29adf1664520c2b" style="width: 100.0%; height: 100.0%;">CASE-PILOTE – 0.003 mg/kg (194 prélèvements)</div>`)[0];
+                popup_983ca78cf2045813209d80189a281c0d.setContent(html_a74f62919e5cecf4e29adf1664520c2b);
+            
+        
+
+        circle_marker_0ac1d1ca3797f421c2af92964532edbc.bindPopup(popup_983ca78cf2045813209d80189a281c0d)
+        ;
+
+        
+    
+    
+            var circle_marker_94c0e14fe6c4093a8bf16a46f9f8232f = L.circleMarker(
+                [14.488331042359851, -61.023105462434586],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_815d2d339f5d7442beca3e154d5828a6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_451604c5d442f92990ff903c4c1b9278 = $(`<div id="html_451604c5d442f92990ff903c4c1b9278" style="width: 100.0%; height: 100.0%;">DIAMANT(LE) – 0.003 mg/kg (210 prélèvements)</div>`)[0];
+                popup_815d2d339f5d7442beca3e154d5828a6.setContent(html_451604c5d442f92990ff903c4c1b9278);
+            
+        
+
+        circle_marker_94c0e14fe6c4093a8bf16a46f9f8232f.bindPopup(popup_815d2d339f5d7442beca3e154d5828a6)
+        ;
+
+        
+    
+    
+            var circle_marker_0c5065474a75ead52ff894487233ba36 = L.circleMarker(
+                [14.584434157514647, -60.95803565194491],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.955, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_e0b5639a27bc9dfe7542231473e3bae8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4768e4fc0c6cf2b990566db41d78794a = $(`<div id="html_4768e4fc0c6cf2b990566db41d78794a" style="width: 100.0%; height: 100.0%;">DUCOS – 0.128 mg/kg (1591 prélèvements)</div>`)[0];
+                popup_e0b5639a27bc9dfe7542231473e3bae8.setContent(html_4768e4fc0c6cf2b990566db41d78794a);
+            
+        
+
+        circle_marker_0c5065474a75ead52ff894487233ba36.bindPopup(popup_e0b5639a27bc9dfe7542231473e3bae8)
+        ;
+
+        
+    
+    
+            var circle_marker_e77269da9e996b1290f74dc3f5c9468a = L.circleMarker(
+                [14.738322605859182, -61.13792815090478],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_3fc0049261184b66e0c916bb09c7ff7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9205582e5bfdd57d2a07b0adc3c5ebc6 = $(`<div id="html_9205582e5bfdd57d2a07b0adc3c5ebc6" style="width: 100.0%; height: 100.0%;">FONDS-SAINT-DENIS – 0.077 mg/kg (214 prélèvements)</div>`)[0];
+                popup_3fc0049261184b66e0c916bb09c7ff7e.setContent(html_9205582e5bfdd57d2a07b0adc3c5ebc6);
+            
+        
+
+        circle_marker_e77269da9e996b1290f74dc3f5c9468a.bindPopup(popup_3fc0049261184b66e0c916bb09c7ff7e)
+        ;
+
+        
+    
+    
+            var circle_marker_e197cdc12de9999024e73e1eff53348c = L.circleMarker(
+                [14.642700596812102, -61.06488480634946],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_bd4a6f7905ffbe1df8ae673047265ed0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1634d760437930c8bb34aa54588fd96 = $(`<div id="html_d1634d760437930c8bb34aa54588fd96" style="width: 100.0%; height: 100.0%;">FORT-DE-FRANCE – 0.012 mg/kg (608 prélèvements)</div>`)[0];
+                popup_bd4a6f7905ffbe1df8ae673047265ed0.setContent(html_d1634d760437930c8bb34aa54588fd96);
+            
+        
+
+        circle_marker_e197cdc12de9999024e73e1eff53348c.bindPopup(popup_bd4a6f7905ffbe1df8ae673047265ed0)
+        ;
+
+        
+    
+    
+            var circle_marker_58f9608e6a315cb12a8966eb40d97ec8 = L.circleMarker(
+                [14.604778267662057, -60.911844270885204],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.415, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_d6ce92fb4c31cdf6e7d6e4f24e01df70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_777e601aa008ccc6de2d835ce77ca06a = $(`<div id="html_777e601aa008ccc6de2d835ce77ca06a" style="width: 100.0%; height: 100.0%;">FRANCOIS(LE) – 0.224 mg/kg (1483 prélèvements)</div>`)[0];
+                popup_d6ce92fb4c31cdf6e7d6e4f24e01df70.setContent(html_777e601aa008ccc6de2d835ce77ca06a);
+            
+        
+
+        circle_marker_58f9608e6a315cb12a8966eb40d97ec8.bindPopup(popup_d6ce92fb4c31cdf6e7d6e4f24e01df70)
+        ;
+
+        
+    
+    
+            var circle_marker_1d50d48b72373ec39c03e26b4df1b2e1 = L.circleMarker(
+                [14.870621468928613, -61.17419726809236],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_d2a95e756c9e9dff34533cf100287346 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8aa1bae6bc53ddcb526daf89262eb03e = $(`<div id="html_8aa1bae6bc53ddcb526daf89262eb03e" style="width: 100.0%; height: 100.0%;">GRAND'RIVIERE – 1.840 mg/kg (125 prélèvements)</div>`)[0];
+                popup_d2a95e756c9e9dff34533cf100287346.setContent(html_8aa1bae6bc53ddcb526daf89262eb03e);
+            
+        
+
+        circle_marker_1d50d48b72373ec39c03e26b4df1b2e1.bindPopup(popup_d2a95e756c9e9dff34533cf100287346)
+        ;
+
+        
+    
+    
+            var circle_marker_63260a16cabc37e271f95769b16e32c8 = L.circleMarker(
+                [14.707378120761014, -61.01740375360856],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.465, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_ac940d1f573b75c1f1acafaba2ed2eb4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_57dabb9d3b27f3b98064a09f0f74f8fb = $(`<div id="html_57dabb9d3b27f3b98064a09f0f74f8fb" style="width: 100.0%; height: 100.0%;">GROS-MORNE – 0.547 mg/kg (2093 prélèvements)</div>`)[0];
+                popup_ac940d1f573b75c1f1acafaba2ed2eb4.setContent(html_57dabb9d3b27f3b98064a09f0f74f8fb);
+            
+        
+
+        circle_marker_63260a16cabc37e271f95769b16e32c8.bindPopup(popup_ac940d1f573b75c1f1acafaba2ed2eb4)
+        ;
+
+        
+    
+    
+            var circle_marker_774056bde55875d4e4dc8c5f6ef56372 = L.circleMarker(
+                [14.542819827922893, -60.978508845353545],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_4fe5ed4f8a8fb1b7727c9db7682db06e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f3a593e9a373327030a6e3a9f60955f9 = $(`<div id="html_f3a593e9a373327030a6e3a9f60955f9" style="width: 100.0%; height: 100.0%;">Hors Martinique – 0.082 mg/kg (27 prélèvements)</div>`)[0];
+                popup_4fe5ed4f8a8fb1b7727c9db7682db06e.setContent(html_f3a593e9a373327030a6e3a9f60955f9);
+            
+        
+
+        circle_marker_774056bde55875d4e4dc8c5f6ef56372.bindPopup(popup_4fe5ed4f8a8fb1b7727c9db7682db06e)
+        ;
+
+        
+    
+    
+            var circle_marker_620840b7a4d156eb6e22c1d8a4056e20 = L.circleMarker(
+                [14.639004536243581, -60.987341079424056],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.65, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_4b83c38b457042c29dca9f34d5448fae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf6fa08dd8a8af9effeb1c032cafc340 = $(`<div id="html_cf6fa08dd8a8af9effeb1c032cafc340" style="width: 100.0%; height: 100.0%;">LAMENTIN(LE) – 0.442 mg/kg (1930 prélèvements)</div>`)[0];
+                popup_4b83c38b457042c29dca9f34d5448fae.setContent(html_cf6fa08dd8a8af9effeb1c032cafc340);
+            
+        
+
+        circle_marker_620840b7a4d156eb6e22c1d8a4056e20.bindPopup(popup_4b83c38b457042c29dca9f34d5448fae)
+        ;
+
+        
+    
+    
+            var circle_marker_0c13c12f5024161eee29339f7f322a14 = L.circleMarker(
+                [14.817285539065251, -61.07173374464972],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.815, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_7e4124300d7972d39cac98e9c0094b5e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d9cbe91b5037180f361329fdb2151896 = $(`<div id="html_d9cbe91b5037180f361329fdb2151896" style="width: 100.0%; height: 100.0%;">LORRAIN(LE) – 0.584 mg/kg (1763 prélèvements)</div>`)[0];
+                popup_7e4124300d7972d39cac98e9c0094b5e.setContent(html_d9cbe91b5037180f361329fdb2151896);
+            
+        
+
+        circle_marker_0c13c12f5024161eee29339f7f322a14.bindPopup(popup_7e4124300d7972d39cac98e9c0094b5e)
+        ;
+
+        
+    
+    
+            var circle_marker_dd2ffae0c08f56b8370dd7227578d2b5 = L.circleMarker(
+                [14.860080053613078, -61.140506029221726],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_003de0b1ac7611ce4ab86d4c23e1f6d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_06743ad635ce3052d0b87e7afa6b3439 = $(`<div id="html_06743ad635ce3052d0b87e7afa6b3439" style="width: 100.0%; height: 100.0%;">MACOUBA – 1.697 mg/kg (698 prélèvements)</div>`)[0];
+                popup_003de0b1ac7611ce4ab86d4c23e1f6d1.setContent(html_06743ad635ce3052d0b87e7afa6b3439);
+            
+        
+
+        circle_marker_dd2ffae0c08f56b8370dd7227578d2b5.bindPopup(popup_003de0b1ac7611ce4ab86d4c23e1f6d1)
+        ;
+
+        
+    
+    
+            var circle_marker_28cb2cc433fedae6d4a24ebd328ab723 = L.circleMarker(
+                [14.805573872068342, -61.038574385690985],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_ab7520d8e4314fd83cc1951e131d77a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ac0ec8d31ee819703bebfb6cfe1ffc5 = $(`<div id="html_3ac0ec8d31ee819703bebfb6cfe1ffc5" style="width: 100.0%; height: 100.0%;">MARIGOT(LE) – 0.613 mg/kg (475 prélèvements)</div>`)[0];
+                popup_ab7520d8e4314fd83cc1951e131d77a8.setContent(html_3ac0ec8d31ee819703bebfb6cfe1ffc5);
+            
+        
+
+        circle_marker_28cb2cc433fedae6d4a24ebd328ab723.bindPopup(popup_ab7520d8e4314fd83cc1951e131d77a8)
+        ;
+
+        
+    
+    
+            var circle_marker_3d638a0b7d0e97252d88c53b3e87ef80 = L.circleMarker(
+                [14.488850773800069, -60.85707261762125],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_dee8e320481e8615d1a8a30a608ec029 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fc6c4f0cc9e210123f6c8c7d4734afe5 = $(`<div id="html_fc6c4f0cc9e210123f6c8c7d4734afe5" style="width: 100.0%; height: 100.0%;">MARIN(LE) – 0.171 mg/kg (349 prélèvements)</div>`)[0];
+                popup_dee8e320481e8615d1a8a30a608ec029.setContent(html_fc6c4f0cc9e210123f6c8c7d4734afe5);
+            
+        
+
+        circle_marker_3d638a0b7d0e97252d88c53b3e87ef80.bindPopup(popup_dee8e320481e8615d1a8a30a608ec029)
+        ;
+
+        
+    
+    
+            var circle_marker_60ed68c77134d8f6e6c10c648715dbcf = L.circleMarker(
+                [14.76639281983378, -61.13431259460592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.625, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_1fd703ecfe44e533eb9faabf997e28fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_29915235fcaf43b6410761f08c382fe3 = $(`<div id="html_29915235fcaf43b6410761f08c382fe3" style="width: 100.0%; height: 100.0%;">MORNE-ROUGE(LE) – 2.800 mg/kg (3725 prélèvements)</div>`)[0];
+                popup_1fd703ecfe44e533eb9faabf997e28fb.setContent(html_29915235fcaf43b6410761f08c382fe3);
+            
+        
+
+        circle_marker_60ed68c77134d8f6e6c10c648715dbcf.bindPopup(popup_1fd703ecfe44e533eb9faabf997e28fb)
+        ;
+
+        
+    
+    
+            var circle_marker_178e3ed29f3fb0c0067b821c766870d0 = L.circleMarker(
+                [14.702503678750858, -61.136992799057886],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_64309eec1391a4a216941651f9871940 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_827f55a34312714f7f4ffaea0c29866d = $(`<div id="html_827f55a34312714f7f4ffaea0c29866d" style="width: 100.0%; height: 100.0%;">MORNE-VERT(LE) – 0.003 mg/kg (244 prélèvements)</div>`)[0];
+                popup_64309eec1391a4a216941651f9871940.setContent(html_827f55a34312714f7f4ffaea0c29866d);
+            
+        
+
+        circle_marker_178e3ed29f3fb0c0067b821c766870d0.bindPopup(popup_64309eec1391a4a216941651f9871940)
+        ;
+
+        
+    
+    
+            var circle_marker_17aeffd63b823233393fff4fcb21bd01 = L.circleMarker(
+                [14.805994576332383, -61.21502972393388],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_35624c0be5c185bb1b2ab25bb0039cd4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_16321a61e96020e2c65068afc03b9ec8 = $(`<div id="html_16321a61e96020e2c65068afc03b9ec8" style="width: 100.0%; height: 100.0%;">PRECHEUR(LE) – 0.088 mg/kg (229 prélèvements)</div>`)[0];
+                popup_35624c0be5c185bb1b2ab25bb0039cd4.setContent(html_16321a61e96020e2c65068afc03b9ec8);
+            
+        
+
+        circle_marker_17aeffd63b823233393fff4fcb21bd01.bindPopup(popup_35624c0be5c185bb1b2ab25bb0039cd4)
+        ;
+
+        
+    
+    
+            var circle_marker_daf1f2c697aa8f2b72d10cab6b07f119 = L.circleMarker(
+                [14.518151549379109, -60.897586412885445],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.955, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_b2c9ff2be1dd56cf5c3e60dae33f6348 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff2958b09c2f09c6ffc95706ba109f5a = $(`<div id="html_ff2958b09c2f09c6ffc95706ba109f5a" style="width: 100.0%; height: 100.0%;">RIVIERE-PILOTE – 0.098 mg/kg (1191 prélèvements)</div>`)[0];
+                popup_b2c9ff2be1dd56cf5c3e60dae33f6348.setContent(html_ff2958b09c2f09c6ffc95706ba109f5a);
+            
+        
+
+        circle_marker_daf1f2c697aa8f2b72d10cab6b07f119.bindPopup(popup_b2c9ff2be1dd56cf5c3e60dae33f6348)
+        ;
+
+        
+    
+    
+            var circle_marker_9c397a405485d792db52b1f57ad077a5 = L.circleMarker(
+                [14.528018623081373, -60.951513870554926],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_2d0a099212ad3d4e09b457ca916f8265 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f24a8bb4b3ba7dcb6328b9e18a1366f = $(`<div id="html_2f24a8bb4b3ba7dcb6328b9e18a1366f" style="width: 100.0%; height: 100.0%;">RIVIERE-SALEE – 0.174 mg/kg (645 prélèvements)</div>`)[0];
+                popup_2d0a099212ad3d4e09b457ca916f8265.setContent(html_2f24a8bb4b3ba7dcb6328b9e18a1366f);
+            
+        
+
+        circle_marker_9c397a405485d792db52b1f57ad077a5.bindPopup(popup_2d0a099212ad3d4e09b457ca916f8265)
+        ;
+
+        
+    
+    
+            var circle_marker_678ac1ac6fb7d0eb0b1d40c569e885ab = L.circleMarker(
+                [14.673591412699412, -60.95393389409232],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.64, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_d7ecccd5e7c52985945e73e3407f6fde = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c7d0a3fe0117b656beabbb893bc0608 = $(`<div id="html_4c7d0a3fe0117b656beabbb893bc0608" style="width: 100.0%; height: 100.0%;">ROBERT(LE) – 0.168 mg/kg (1728 prélèvements)</div>`)[0];
+                popup_d7ecccd5e7c52985945e73e3407f6fde.setContent(html_4c7d0a3fe0117b656beabbb893bc0608);
+            
+        
+
+        circle_marker_678ac1ac6fb7d0eb0b1d40c569e885ab.bindPopup(popup_d7ecccd5e7c52985945e73e3407f6fde)
+        ;
+
+        
+    
+    
+            var circle_marker_b50b16493df039d8b96ee1db5530a04a = L.circleMarker(
+                [14.55633071125093, -60.91748949779853],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.965, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_1d3ae7cb4beee82e03969999880403d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b71d18754ca2e5705d39f0337f4aafa0 = $(`<div id="html_b71d18754ca2e5705d39f0337f4aafa0" style="width: 100.0%; height: 100.0%;">SAINT-ESPRIT – 0.333 mg/kg (1393 prélèvements)</div>`)[0];
+                popup_1d3ae7cb4beee82e03969999880403d9.setContent(html_b71d18754ca2e5705d39f0337f4aafa0);
+            
+        
+
+        circle_marker_b50b16493df039d8b96ee1db5530a04a.bindPopup(popup_1d3ae7cb4beee82e03969999880403d9)
+        ;
+
+        
+    
+    
+            var circle_marker_ddabe0d867ab4696099975cb5e6b94a3 = L.circleMarker(
+                [14.668021247262814, -61.036860001947005],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.395, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_ae8c954979d7e0ab025cd6a129115d95 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42549fee0ba68a99cb1275d0bf48cd9f = $(`<div id="html_42549fee0ba68a99cb1275d0bf48cd9f" style="width: 100.0%; height: 100.0%;">SAINT-JOSEPH – 0.269 mg/kg (1879 prélèvements)</div>`)[0];
+                popup_ae8c954979d7e0ab025cd6a129115d95.setContent(html_42549fee0ba68a99cb1275d0bf48cd9f);
+            
+        
+
+        circle_marker_ddabe0d867ab4696099975cb5e6b94a3.bindPopup(popup_ae8c954979d7e0ab025cd6a129115d95)
+        ;
+
+        
+    
+    
+            var circle_marker_10dd1c066f2affa41aa1c8df93b7ef7a = L.circleMarker(
+                [14.755966375784576, -61.170485651891454],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_7ea698ea75077f24161f9a1013e86acb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8df48626ff364c511ab7873519071b27 = $(`<div id="html_8df48626ff364c511ab7873519071b27" style="width: 100.0%; height: 100.0%;">SAINT-PIERRE – 0.561 mg/kg (339 prélèvements)</div>`)[0];
+                popup_7ea698ea75077f24161f9a1013e86acb.setContent(html_8df48626ff364c511ab7873519071b27);
+            
+        
+
+        circle_marker_10dd1c066f2affa41aa1c8df93b7ef7a.bindPopup(popup_7ea698ea75077f24161f9a1013e86acb)
+        ;
+
+        
+    
+    
+            var circle_marker_61e51d80d5a7af23abb6fe63265eef35 = L.circleMarker(
+                [14.440616965968914, -60.85725536678594],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_528e2963634cf3ec9787007dbfa4293b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d689cb61ffa8335c166b1834703a809 = $(`<div id="html_9d689cb61ffa8335c166b1834703a809" style="width: 100.0%; height: 100.0%;">SAINTE-ANNE – 0.002 mg/kg (263 prélèvements)</div>`)[0];
+                popup_528e2963634cf3ec9787007dbfa4293b.setContent(html_9d689cb61ffa8335c166b1834703a809);
+            
+        
+
+        circle_marker_61e51d80d5a7af23abb6fe63265eef35.bindPopup(popup_528e2963634cf3ec9787007dbfa4293b)
+        ;
+
+        
+    
+    
+            var circle_marker_11366215b8d695b056c9c75198f7b5fa = L.circleMarker(
+                [14.488635197861587, -60.94559957879414],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_55de6cbc11f1e07497840d99239c97de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b2c6f1a3af78ab31288414f33fcfabbc = $(`<div id="html_b2c6f1a3af78ab31288414f33fcfabbc" style="width: 100.0%; height: 100.0%;">SAINTE-LUCE – 0.029 mg/kg (492 prélèvements)</div>`)[0];
+                popup_55de6cbc11f1e07497840d99239c97de.setContent(html_b2c6f1a3af78ab31288414f33fcfabbc);
+            
+        
+
+        circle_marker_11366215b8d695b056c9c75198f7b5fa.bindPopup(popup_55de6cbc11f1e07497840d99239c97de)
+        ;
+
+        
+    
+    
+            var circle_marker_9e4c92a9db885b46a15d6b91c58271d4 = L.circleMarker(
+                [14.774406968568458, -61.017648670325805],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.03, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_21a5d26c2186fdef09fd5b90972902e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7961a24076cd39bc10d75c7f2d80550d = $(`<div id="html_7961a24076cd39bc10d75c7f2d80550d" style="width: 100.0%; height: 100.0%;">SAINTE-MARIE – 0.341 mg/kg (1406 prélèvements)</div>`)[0];
+                popup_21a5d26c2186fdef09fd5b90972902e0.setContent(html_7961a24076cd39bc10d75c7f2d80550d);
+            
+        
+
+        circle_marker_9e4c92a9db885b46a15d6b91c58271d4.bindPopup(popup_21a5d26c2186fdef09fd5b90972902e0)
+        ;
+
+        
+    
+    
+            var circle_marker_056fe66765c08ab89857ded290fbe940 = L.circleMarker(
+                [14.638119365839799, -61.09971831373025],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_400b8dfdb86d2f7c4afd82a08dd31be2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aa12e2155b81006e177cc624eecb27ac = $(`<div id="html_aa12e2155b81006e177cc624eecb27ac" style="width: 100.0%; height: 100.0%;">SCHOELCHER – 0.006 mg/kg (185 prélèvements)</div>`)[0];
+                popup_400b8dfdb86d2f7c4afd82a08dd31be2.setContent(html_aa12e2155b81006e177cc624eecb27ac);
+            
+        
+
+        circle_marker_056fe66765c08ab89857ded290fbe940.bindPopup(popup_400b8dfdb86d2f7c4afd82a08dd31be2)
+        ;
+
+        
+    
+    
+            var circle_marker_89d1417b1ff68b1c570ab89130e7bd08 = L.circleMarker(
+                [14.738916925360028, -60.98022678862396],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.505, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_b7d08a7cdbed0863f0f547e3de5b92a8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_59cdd3cbcd0086e0f2b136df2ffc66e4 = $(`<div id="html_59cdd3cbcd0086e0f2b136df2ffc66e4" style="width: 100.0%; height: 100.0%;">TRINITE(LA) – 0.684 mg/kg (1101 prélèvements)</div>`)[0];
+                popup_b7d08a7cdbed0863f0f547e3de5b92a8.setContent(html_59cdd3cbcd0086e0f2b136df2ffc66e4);
+            
+        
+
+        circle_marker_89d1417b1ff68b1c570ab89130e7bd08.bindPopup(popup_b7d08a7cdbed0863f0f547e3de5b92a8)
+        ;
+
+        
+    
+    
+            var circle_marker_f16970f10b193cf9d8ae2268dfe379ca = L.circleMarker(
+                [14.530752451900376, -61.05282151584363],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_00b6fe69c5bf52f015d93c1a2b72e90c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5f775fa2dab836d487338f3bab70a70e = $(`<div id="html_5f775fa2dab836d487338f3bab70a70e" style="width: 100.0%; height: 100.0%;">TROIS-ILETS(LES) – 0.001 mg/kg (152 prélèvements)</div>`)[0];
+                popup_00b6fe69c5bf52f015d93c1a2b72e90c.setContent(html_5f775fa2dab836d487338f3bab70a70e);
+            
+        
+
+        circle_marker_f16970f10b193cf9d8ae2268dfe379ca.bindPopup(popup_00b6fe69c5bf52f015d93c1a2b72e90c)
+        ;
+
+        
+    
+    
+            var circle_marker_565519e760c17981fa19bf8c2b41fa20 = L.circleMarker(
+                [14.552878747183517, -60.871426588950264],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.045, "stroke": true, "weight": 3}
+            ).addTo(map_fed412cf63155be103642c4ec5ff312a);
+        
+    
+        var popup_17ce94386594fd329742c76440d0c293 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0528861abe7c2fe438257388f5fcda26 = $(`<div id="html_0528861abe7c2fe438257388f5fcda26" style="width: 100.0%; height: 100.0%;">VAUCLIN(LE) – 0.210 mg/kg (1209 prélèvements)</div>`)[0];
+                popup_17ce94386594fd329742c76440d0c293.setContent(html_0528861abe7c2fe438257388f5fcda26);
+            
+        
+
+        circle_marker_565519e760c17981fa19bf8c2b41fa20.bindPopup(popup_17ce94386594fd329742c76440d0c293)
+        ;
+
+        
+    
+</script>
+</html>
